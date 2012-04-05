@@ -1,0 +1,32 @@
+<p><h3><%= @product.name %></h3></p>
+<p><%= @product.description.html_safe %></p>
+
+<table class="index sortable" data-hook="images_table">
+  <tr data-hook="images_header">
+    <th>Audio</th>
+    <th>Status</th>
+   </tr> 
+
+   <% audio_revives = AudioRevive.find_all_by_product_id(@product.id) %>
+
+   <% audio_revives.each do |audio_revive| %> 
+    <tr >
+     <td> <%= audio_revive.mp3_file_name %>&nbsp;&nbsp;<a href="<%= audio_revive.mp3.url %>" target="_blank"
+              onClick="javascript:PlayerOpen('LFO&amp;#8217;s Revenge',this.href);
+              return false"><img src="/spree/Play.png" ></a> </span></td>
+        <td> 
+          <%= form_for [@admin, AudioRevive.new(:status => @status)], :html => {:multipart => true} do |f| %>
+        	<%= f.radio_button :status, "1" %>Active &nbsp; 
+        	<%= f.radio_button :status, "0" %>Inactive &nbsp;
+                <%= f.submit "save" %> &nbsp;
+                 <a href ="/delete/<%= audio_revive.id %>">Remove</a>
+           <% end %>
+
+        
+     </td>
+    </tr>
+  
+   <% end %>  
+   
+
+</table>

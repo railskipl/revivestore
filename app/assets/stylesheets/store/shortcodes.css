@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+
+
+/* ##############################################################
+						---	SHORTCODES ---
+##############################################################
+
+
+/* ----- Toggle ----- */
+
+.trigger		{
+				cursor:pointer;
+				height:35px;
+				line-height:35px;
+				background:url(/assets/store/bg_toggle.png) repeat-x left;
+				border:1px solid #ececec;
+				margin-top:-1px;
+				}
+				
+.trigger b {
+				background:url(/assets/store/icons_small/expand.png) 7px 6px no-repeat;
+				text-decoration: none;
+				font-size:14px;
+				font-weight:100;
+				padding-left:44px;
+				display:block;
+				height:35px;
+				line-height:35px;
+				color:#82a8b6;
+} 	
+
+.trigger.active b {
+				background:url(/assets/store/icons_small/collapse.png) 7px 6px no-repeat;
+				}
+.toggle_container {
+				font-size: 12px;
+				padding:20px;
+				color:#4a4a4a;
+				border-left:1px solid #ececec;
+				border-right:1px solid #ececec;
+				background:#fff;
+				}
+				
+.toggle_container:last-child {
+				border-bottom:1px solid #ececec;
+}
+
+.toggle_container p {
+				padding:0;
+} 
+				

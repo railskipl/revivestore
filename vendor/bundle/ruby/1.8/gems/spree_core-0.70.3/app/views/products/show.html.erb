@@ -1,0 +1,63 @@
+<div data-hook="product_show">
+  <% @body_id = 'product-details' %>
+  <h1><%= accurate_title %></h1>
+
+  <div id="product-images" data-hook="product_images">
+    <div id="main-image" data-hook>
+      <%= render 'image' %>
+    </div>
+    <div id="thumbnails" data-hook>
+      <%= render 'thumbnails', :product => @product %>
+      <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>	
+   <table class="index sortable" data-hook="images_table">
+       <tr data-hook="images_header">
+         <th>Audio</th>
+      </tr> 
+       <% audio_revives = AudioRevive.find_all_by_product_id(@product.id) %>
+          <% audio_revives.each do |audio_revive| %> 
+       <tr >
+          <td> <%= audio_revive.mp3_file_name %>&nbsp;&nbsp;<a href="<%= audio_revive.mp3.url %>" target="_blank"
+              onClick="javascript:PlayerOpen('LFO&amp;#8217;s Revenge',this.href);
+              return false"><img src="/spree/Play.png" ></a> </span></td>
+       </tr>
+    <% end %>
+  </table>
+<br/>
+       <%= form_for [AudioRevive.new(:product_id => @product.id)], :html => {:multipart => true} do |f| %>
+              <table width="100%">
+                  <%= f.hidden_field :product_id, :value => @product.id %>
+                  <%= f.hidden_field :status, :value => 0 %>
+               <tr>
+                  <td align="left" width="54%" style="vertical-align: top !important;"><strong>MP3</strong></td>
+                  <td align="left"><%= f.file_field :mp3 %></td>
+               </tr>
+	       <tr>
+                <td align="left" colspan="2" type="submit"><%= f.submit "Add Mp3" %></td>                
+              </tr>
+            </table>
+     <% end %>   
+    </div>
+  </div>
+
+
+
+
+<div id="cart-form" data-hook="cart_form">
+    <%= render 'cart_form' %>
+  </div>
+
+
+  <div id="product-description" data-hook="product_description">
+    <%= product_description(@product) rescue t(:product_has_no_description) %>
+    <div data-hook="product_properties">
+      <%= render 'properties' %>
+    </div>
+  </div>
+</div>
+
+<%= render 'taxons' %>

@@ -1,0 +1,2 @@
+module DigitalsHelper
+end

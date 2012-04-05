@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	
+	 <%= stylesheet_link_tag 'store/styles','store/contact', 'store/prettyPhoto', 'store/shortcodes','store/superfish','store/widgets','store/spree_core' %>   
+	
+	<!-- Initialise jQuery Library -->      
+	<%= javascript_include_tag 'store/jquery.min.js', 'store/jquery-ui.min.js', 'store/general','store/cart','store/checkout','store/product','store/spree_core' %>  
+	 <%= javascript_include_tag "soundpop.js" %> 
+	 
+	<%= csrf_meta_tags %>
+	
+	
+	<style type="text/css">
+	   	/*link to the main CSS file */
+.style18 {font-size: 65px}
+    .style24 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+    .style26 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; }
+    </style>
+    
+ 	<head>
+	  <title><%=h yield(:title) %></title>
+	  <!-- Additional header tags here -->
+	</head>
+
+	
+
+
+	
+	
+<meta charset="UTF-8"></head>    
+
+<body>
+   
+<!--/ top_full-->
+		<div id="header-top">
+           <div class="container_12">
+			<div class="logo">
+                <a href="/"><strong>Revive! </strong><span>BookShop</span></a>			</div>
+<!--/ logo-->
+					<div class="nav-menu">
+                       <ul class="sf-menu">
+                      	<li class="current-menu-item"><a href="/">Home Page</a>
+                        	
+                        </li>
+                                                <li><a href="/about">About</a></li>
+                    <li><a href="/home">Buy eBooks</a></li>
+                        <li><a href="/reading_app">Free eReading App</a></li>
+                    
+                        <li><a href="/video_reviews">Video Reviews</a>
+                         </li>
+                      	<li><a href="/authors">Authors</a>
+                         </li>
+                      </ul>
+                    </div><!--/ nav-->
+             </div><!--/ container_12--> 
+		</div><!--/ header-->
+
+		<div id="sidebar_left" class="middle">
+		      <div class="container_11">
+		      		<div class="wrapper">    	
+		                <div id="content">
+		                	<div class="text-post">
+		                      <div class="post-item">
+  <div class="entry">  
+<%= yield %>    
+
+</div>
+<!--/ entry-->
+</div>
+<!--/ post-item-->
+<!--/ wp-pagenavi-->
+</div>
+<!--/ text-post-->
+</div><!--/ content-->
+</div><!--/ wrapper-->
+
+ <div id="sidebar">
+    <div class="widget-container widget_community">   
+	<%= render 'shared/taxonomies' %> </ul> 
+   		 <h3>Main Menu</h3>
+       <ul>
+       	<li><a href="/">Home Page</a></li>
+                                                       	<li><a href="/about">About</a></li>
+
+ <li><a href="/home">Buy eBooks</a></li>
+       	<li><a href="/reading_app">Free eReading App</a></li>
+       	<li><a href="/video_reviews">Video Reviews</a></li>
+       	<li><a href="/authors">Authors</a></li>       	  
+       </ul>
+       	<div class="clear"></div>    
+<ul>
+
+    </div>
+    
+    
+    </div><!--/sidebar-->
+  	  <div class="clear"></div>
+ </div><!--/ container_11-->
+ </div><!--/ sidebar_right-->
+ <!--/ sidebar-footer-->
+<div id="footer_full">
+  <div id="footer">
+       	 <p class="copyright">Copyright &copy; 2011 &bull; REVIVE! BookShop &bull; All rights reserved</p>
+    <div class="clear"></div>
+</div>
+</div><!--/ footer_full-->
+
+</body>
+</html>

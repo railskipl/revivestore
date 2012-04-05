@@ -1,0 +1,14 @@
+ <div>
+		<a href="https://securepay.mopay.com/mopay20/button/main.action?bsid=41859936&tim=1329472190664&jcid=" id="buttonPopupLink" onclick="window.open('', 'buttonWindow','height=450,width=600,resizable=no,modal=yes,left=300,location=no,menubar=no,resizable=no,status=no');document.getElementById('buttonForm').submit();return false;" style="border:0;padding:5px;margin:5px;background-color:transparent;vertical-align:middle;" title=<% @product.name %> ><img src="https://securepay.mopay.com/mopay20/buttons/btn_checkout.gif?loc=de_DE&style=1" border="0px" alt="Mopay Button" height="27px" width="80px" padding-right="10px">
+</a>
+			<form action="https://securepay.mopay.com/mopay20/button/sandbox.action
+" accept-charset="UTF-8" method="post" name="mopaybuttonform" id="buttonForm" target="buttonWindow">
+   			<input type="hidden" name="buttonid" value="F62AFD4BC190B55B3788BC9DE7C3B0E7"/>
+			<input type="hidden" name="productname" value= <%= @product.name %>/>
+   			<input type="hidden" name="myid" value="MyId here" />
+   			<input type="hidden" name="backurl" value="http://www.google.com/" />
+   			<input type="hidden" name="servicename" value="RUBY AND RAILS" />
+   			<input type="hidden" name="iframe" value="false" />
+  			<input type="hidden" name="token" value="2f3a50ddeeb8e76d565d79d6b58cb54e" />
+  			</form>
+		</div>

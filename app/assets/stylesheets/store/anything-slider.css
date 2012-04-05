@@ -1,0 +1,387 @@
+/*
+    AnythingSlider v1.4.1+ Default (base) theme
+
+    By Chris Coyier: http://css-tricks.com
+    with major improvements by Doug Neiner: http://pixelgraphics.us/
+    based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+/******* SET DEFAULT DIMENSIONS HERE ********/
+
+.slider-top {
+	background:url(/assets/store/pattern_top.png) repeat-x top;
+} 
+
+.slider-bottom {
+	background:url(/assets/store/pattern_bottom.png) repeat-x bottom;
+} 
+
+div.anythingSlider {
+	width: 960px;
+	height: 543px;
+	margin: 0 auto;
+}
+
+/****** SET COLORS HERE *******/
+/* Default State */
+div.anythingSlider .thumbNav a.cur {
+	background:url(/assets/store/bullets.png) 0 0 no-repeat;
+}
+div.anythingSlider .anythingWindow {
+	border-top: none;
+	border-bottom: none;
+}c
+div.anythingSlider .start-stop {
+	background-color: #040;
+	color: #fff;
+}
+div.anythingSlider .start-stop.playing {
+	background-color: #800;
+}
+div.anythingSlider .start-stop:hover, div.anythingSlider .start-stop.hover {
+	color: #ddd;
+}
+
+/* Active State */
+div.anythingSlider.activeSlider .anythingWindow {
+	/*border-color: #7C9127;*/
+}
+div.anythingSlider.activeSlider .thumbNav a.cur {
+	background:url(/assets/store/bullets.png) 0 0 no-repeat;
+}
+div.anythingSlider .start-stop {
+	background-color: #080;
+	color: #fff;
+}
+div.anythingSlider .start-stop.playing {
+	background-color: #d00;
+}
+div.anythingSlider .start-stop:hover, div.anythingSlider .start-stop.hover {
+	color: #fff;
+}
+
+/**** DO NOT CHANGE BELOW THIS LINE ****/
+/* anythingSlider viewport window */
+div.anythingSlider .anythingWindow {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background:url(/assets/store/highlights.png) no-repeat top center;	 
+}
+/* wrapper: 45px right & left padding for the arrows, 28px @ bottom for navigation */
+div.anythingSlider {
+	position: relative;
+	padding: 0;
+}
+/* anythingSlider base UL */
+ul.anythingBase {
+	background: transparent;
+	list-style: none;
+	overflow:hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+ul.anythingBase li.panel {
+	background: transparent;
+	display: block;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+/* Navigation Arrows */
+div.anythingSlider .arrow {
+	top: 35%;
+	position: absolute;
+	display: block;
+	z-index:50;
+}
+div.anythingSlider .arrow a {
+	display: block;
+	height: 156px;
+	margin: 0;
+	width: 73px;
+	text-align: center;
+	outline: 0;
+	text-indent: -9999px;
+}
+div.anythingSlider .forward { right: -73px; }
+div.anythingSlider .back { left: -73px; }
+div.anythingSlider .forward a { background:url(/assets/store/nav_right.png) -73px 0 no-repeat; }
+div.anythingSlider .back a { background:url(/assets/store/nav_left.png) -73px 0 no-repeat; }
+div.anythingSlider .forward a:hover, div.anythingSlider .forward a.hover { background:url(/assets/store/nav_right.png) 0 0 no-repeat; }
+div.anythingSlider .back a:hover, div.anythingSlider .back a.hover { background:url(/assets/store/nav_left.png) 0 0 no-repeat; }
+
+/* Navigation Links */
+div.anythingSlider .anythingControls {
+				position:absolute;
+				bottom:-33px;
+				left:45% !important;
+
+				padding:0 0 0 5px;
+				z-index:100;
+}
+div.anythingSlider .thumbNav {
+width:auto;
+margin: 0 auto;
+}
+div.anythingSlider .thumbNav li { display: inline; }
+div.anythingSlider .thumbNav a {
+				width:17px;
+				height:17px;
+				overflow:hidden;
+				display:block;
+				text-indent:-9999px;
+				margin-right:10px;
+				float:left;
+				position:relative;
+				z-index:99;
+				cursor:pointer;
+				outline:none;
+				background:url(/assets/store/bullets.png) -20px 0 no-repeat;
+}
+div.anythingSlider .thumbNav a:hover {
+	background:url(/assets/store/bullets.png) 0 0 no-repeat;
+}
+
+/* slider autoplay right-to-left, reverse order of nav links to look better */
+div.anythingSlider.rtl .thumbNav a { float: right; } /* reverse order of nav links */
+div.anythingSlider.rtl .thumbNav { float: left; }    /* move nav link group to left */
+/* div.anythingSlider.rtl .start-stop { float: right; } */ /* move start/stop button - in case you want to switch sides */
+
+/* Autoplay Start/Stop button */
+div.anythingSlider .start-stop {
+/*	background-image: url(/assets/store/cellshade.png);
+	background-repeat: repeat-x;
+	background-position: center top;
+	padding: 2px 5px;
+	width: 40px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	z-index: 100;
+	outline: 0;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;*/
+	display:none;
+}
+
+.txt_video_left {
+	float:left;
+	width:210px;
+	margin-right:30px;
+	padding:118px 0 0 33px
+} 
+
+
+.txt_video_left h3 {
+	color:#3a3a3a;
+	font-weight:100;
+	font-size:77px;
+	margin-bottom:0;
+	font-family: 'RochesterRegular';
+} 
+
+.slide_video_right {
+	float:left;
+	margin-top:62px;
+	padding:9px;
+	background:#f9f9f9;
+	border:1px solid #fff;
+	width:640px;
+}
+
+.slide_pic_right{
+	float:right;
+	padding-top:108px;
+} 
+
+.txt_slide_left {
+	float:left;
+	width:410px;
+	padding:95px 0 0 52px
+} 
+
+
+.txt_slide_left h2 {
+	color:#3a3a3a;
+	font-weight:100;
+	margin:0;
+	font-family: 'RochesterRegular';
+	font-size:107px;
+} 
+
+
+.txt_slide_left h4, .txt_video_left h4 {
+	color:#000000;
+	font-size:17px;
+	line-height:1.4em;
+	font-weight:100;
+	margin-bottom:10px;
+} 
+
+.txt_slide_left h2 span {
+	color:#82a8b6;
+	font-size:l07px;
+} 
+
+.txt_slide_left p, .txt_video_left p {
+	font-size:12px;
+	color:#282828;
+	line-height:1.7em;
+} 
+
+.txt_slide_left a.btn_gal {
+	display:block;
+	height:62px;
+	margin:37px 0 0 0;
+	text-align:left;
+	width:212px;
+	background:url(/assets/store/btn_gallery.png) no-repeat;
+} 
+
+.txt_video_left a.btn_all {
+	display:block;
+	height:62px;
+	margin:37px 0 0 0;
+	text-align:left;
+	width:212px;
+	background:url(/assets/store/btn_all.png) no-repeat;
+}
+
+.txt_slide_left a.btn_gal:hover, .txt_video_left a.btn_all:hover  {
+	background-position:0 -64px;
+} 
+ /* position the panels so the captions appear correctly */
+ #slider3 .panel { position: relative;}
+ /* captions */
+
+ /* Top caption - padding is included in the width (480px here, 500px in the script), same for height */
+ #slider3 .caption-top {
+  left: 10px;
+  top: 10px;
+  width: 300px;
+ }
+ /* Right caption - padding is included in the width (130px here, 150px in the script), same for height */
+ #slider3 .caption-right {
+  right: 10px;
+  bottom: 10px;
+  width: 300px;
+ }
+ /* Bottom caption - padding is included in the width (480px here, 500px in the script), same for height */
+ #slider3 .caption-bottom {
+  left: 10px;
+  bottom: 10px;
+  width: 300px;
+ }
+ /* Left caption - padding is included in the width (130px here, 150px in the script), same for height */
+ #slider3 .caption-left {
+  left: 10px;
+  bottom: 10px;
+  width: 300px;
+ }
+ /* Caption close button */
+ .caption-top .close, .caption-right .close,
+ .caption-bottom .close, .caption-left .close {
+  font-size: 80%;
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+ }
+ 
+.textSlide {
+	padding:0 30px 0 15px;
+	height:530px;
+
+
+} 
+ 
+.textSlide h1 {
+	text-align:center;
+	font-size:192px;
+	color:#121212;
+} 
+
+.textSlide h2 {
+	font-family: 'RochesterRegular';
+	color:#82a8b6;
+	font-weight:100;
+	line-height:1em;
+	text-align:center;
+	font-size:72px;
+	margin-bottom:0.5em;
+}
+
+.textSlide p {
+	color:#282828;
+	line-height:1.7em;
+	font-size:12px;
+	text-align:center
+} 
+
+.textSlide img.aligncenter {
+	padding-top:90px;
+} 
+
+.textSlide a.more {
+	display:block;
+	height:62px;
+	margin:42px auto 0;
+	text-align:center;
+	width:212px;
+	background:url(/assets/store/bg_more.png) no-repeat;
+} 
+
+.textSlide a.more:hover {
+	background-position:0 -64px;
+} 
+
+.slide_full {
+	background:#f9f9f9;
+	margin:53px auto 0;
+	padding:10px;
+	position:relative;
+	height:415px !important;
+	width:920px !important;
+	border:1px solid white;
+}
+
+.slide_full h4{
+	color:#282828;
+	font-size:17px;
+	margin:0;
+	padding:14px 0 5px;
+	font-weight:100;
+} 
+
+.slide_full p {
+	color:#82a8b6;
+}
+
+.slide_full a.read {
+	position:absolute;
+	bottom:22px;
+	right:20px;
+	margin-left:5px;
+	height:24px;
+	background:url(/assets/store/bg_nav.png) repeat-x 1px 1px #fff;
+	border:1px solid #d7d7d7;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:0 9px;
+	line-height:24px;
+	color:#282828;
+	border:1px solid #d7d7d7;
+} 
+
+.slide_full a.read:hover {
+	background:url(/assets/store/current.png) repeat-x;
+	border:1px solid #2f2f2f;
+	color:#fff;
+}
